@@ -1,3 +1,156 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color: #353535;
+  --lightGrey: #bfbfbf;
+  /* --color-gradient: linear-gradient(45deg, var(--lightGrey), var(--color)); */
+  --color-gradient-1: #353535;
+  /* --color-gradient-2: #54595f; */
+  --color-gradient-3: #bfbfbf;
+  --color-gradient: linear-gradient(
+    45deg,
+    var(--color-gradient-1),
+    var(--color-gradient-3),
+    var(--color-gradient-1),
+    var(--color-gradient-3)
+  );
+  --gradient-animation: 10s linear infinite alternate;
+  /* --bg: #f0f2f6; */
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #353535;
+    --color: #f0f2f6;
+  }
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--color);
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  font-family: "Figtree";
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 64px;
+}
+h2 {
+  font-size: 28px;
+  line-height: 44px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+}
+
+/* code {
+  background: #f0f2f6;
+  padding: 4px 8px;
+} */
+
+.content-detail p,
+ul,
+li {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.content-detail ul,
+li {
+  list-style-type: disc;
+  margin-left: 24px;
+}
+
+.content-detail a {
+  color: #7a7a7a;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 400;
+}
+.content-detail strong {
+  font-weight: 500;
+}
+.content-detail p img {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.colorized {
+  background: var(--color-gradient);
+  animation: gradient var(--gradient-animation);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 700% 700%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/**
+ * If you already use line highlighting
+ */
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.8em;
+}
+code[class*="language-"] {
+  font-size: 14px !important;
+  padding-right: 6px !important;
+  padding-left: 6px !important;
+}
+
+/**
+ * If you only want to use line numbering
+ */
+
+.gatsby-highlight {
+  /* background-color: #fdf6e3; */
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  /* padding: 1em; */
+  overflow: auto;
+  font-size: 14px;
+}
+.gatsby-highlight .token.operator {
+  background-color: transparent;
+}
