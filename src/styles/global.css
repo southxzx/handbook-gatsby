@@ -92,7 +92,7 @@ li {
 
 .content-detail a {
   color: #7a7a7a;
-  text-decoration: underline;
+  /* text-decoration: ; */
   font-size: 16px;
   font-weight: 400;
 }
@@ -103,7 +103,9 @@ li {
   margin: 0 auto;
   max-width: 90%;
 }
-
+.everyday-tags .tag-element:target {
+  text-decoration: underline;
+}
 .colorized {
   background: var(--color-gradient);
   animation: gradient var(--gradient-animation);

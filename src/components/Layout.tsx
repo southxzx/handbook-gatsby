@@ -9,7 +9,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <div className="min-h-screen flex flex-col justify-between">
       <main>
         <div className="container mx-auto pt-10">
-          <div className="max-w-screen-sm mx-auto">{children}</div>
+          <div className="max-w-screen-sm mx-auto pb-12">{children}</div>
         </div>
       </main>
       <div className="mt-auto bg-extraLight p-3">

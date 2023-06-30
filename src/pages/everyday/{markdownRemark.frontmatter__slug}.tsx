@@ -1,4 +1,4 @@
-import { graphql, HeadProps, PageProps } from "gatsby";
+import { graphql, HeadProps, Link, PageProps } from "gatsby";
 import React from "react";
 import BackButton from "../../components/BackButton";
 import Layout from "../../components/Layout";
@@ -21,6 +21,17 @@ const BlogPost: React.FC<PageProps> = ({ data, children, ...rest }) => {
           className="text-lg text-black font-light mt-5"
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        <div className="flex items-center mt-5">
+          {frontmatter.tags?.map((tag: string) => (
+            <Link
+              to={`/everyday/tags#${tag}`}
+              key={tag}
+              className="text-grey !text-sm font-light mr-2 bg-light hover:text-neutral p-1 px-2 rounded"
+            >
+              #{tag}
+            </Link>
+          ))}
+        </div>
       </div>
     </Layout>
   );

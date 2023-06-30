@@ -17,10 +17,18 @@ const EverydayPage: React.FC<PageProps> = ({ data }) => {
         <br />
         (though not on a daily basis 😎)
       </p>
-      <div className="mt-12">
-        <p className="text-neutral font-light mb-2">
-          {`All posts (${totalCount || 0}):`}
-        </p>
+      <div className="my-8">
+        <div className="flex justify-between mb-4">
+          <p className="text-neutral font-light mb-2">
+            {`All posts (${totalCount || 0}):`}
+          </p>
+          <Link
+            to="/everyday/tags"
+            className="text-neutral hover:text-grey font-light mb-2 cursor-pointer"
+          >
+            🔖 Categorize by tags
+          </Link>
+        </div>
         {posts.map((post: any) => {
           const frontmatter = post.node.frontmatter;
           return (
