@@ -7,7 +7,7 @@ slug: 2023-07-02-process-scheduling-algorithm-in-os
 
 `Process` is a running program, to run the process we need a OS scheduler to allocate CPU time for each process (run concurrently).
 
-Process scheduling enables efficient and fair allocation of CPU to multiple processes, and ensures that the system can run multiple tasks concurrently without sacrificing performance or responsiveness.
+`Process scheduling` enables efficient and fair allocation of CPU to multiple processes, and ensures that the system can run multiple tasks concurrently without sacrificing performance or responsiveness.
 
 Scheduling metrics: *`Tturnaround = Tcompletion − Tarrival`*
 
@@ -21,7 +21,7 @@ Take the least arrive time & completion time job to put on first. But if the arr
 
 ## Shortest Time-to-Completion First (STCF)
 
-![STCF_OS_algorithm](https://raw.githubusercontent.com/southxzx/handbook/main/_posts/everyday/_meta/STCF_OS_algorithm.png)
+![STCF_OS_algorithm](https://raw.githubusercontent.com/southxzx/handbook-gatsby/main/_posts/everyday/_meta/STCF_OS_algorithm.png)
 
 This is a `preemptive scheduler`: Preemptive scheduling is used when a process switches from the `running state` -> `ready state` or `waiting state` -> `ready state`.
 
@@ -29,7 +29,7 @@ This does nothing but add `preemption` to SJF. A job is preempted means that it'
 
 ## Round Robin
 
-Assume that each process now has response time, then we have new metric: *`Tresponse = Tf irstrun − Tarrival`*
+Assume that each process now has response time, then we have new metric: *`Tresponse = Tfirstrun − Tarrival`*
 
 Instead of running jobs to completion, RR runs a job for a `time slice` (scheduling quantum).
 
@@ -46,6 +46,6 @@ There are 2 approaches:
 
 Both are bad where the other is good, it's a trade-off common in systems.
 
-Refs:
+**Refs:**
 
 Book: Operating Systems: Three Easy Pieces - Remzi H. Arpaci-Dusseau
