@@ -11,7 +11,9 @@ const EverydayPage: React.FC<PageProps> = ({ data }) => {
   return (
     <Layout>
       <BackButton />
-      <h1 className="text-4xl font-medium">📕 Everyday</h1>
+      <h1 className="text-4xl font-medium">
+        📕 Everyday
+      </h1>
       <p className="text-xl text-grey font-light mt-5">
         Documenting my daily learning experiences
         <br />

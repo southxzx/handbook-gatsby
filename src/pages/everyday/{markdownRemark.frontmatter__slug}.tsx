@@ -11,8 +11,10 @@ const BlogPost: React.FC<PageProps> = ({ data, children, ...rest }) => {
   return (
     <Layout>
       <div className="content-detail">
-        <BackButton />
-        <h1 className="text-4xl font-medium mb-3">{frontmatter.title}</h1>
+        <BackButton href="/everyday" />
+        <h1 className="text-4xl font-medium mb-3 overflow-hidden text-ellipsis">
+          {frontmatter.title}
+        </h1>
         <span className="text-grey font-light text-sm">
           🕑 {frontmatter.date}&nbsp;&nbsp;&nbsp;&nbsp; ⌛️ {timeToRead}{" "}
           {pluralize("min", timeToRead)}&nbsp;read
@@ -53,7 +55,11 @@ export const query = graphql`
 `;
 
 export const Head: React.FC<HeadProps> = ({ data }) => (
-  <Seo title={(data as any).markdownRemark.frontmatter.title} />
+  <Seo
+    title={`${(data as any).markdownRemark.frontmatter.date} - ${
+      (data as any).markdownRemark.frontmatter.title
+    }`}
+  />
 );
 
 export default BlogPost;
