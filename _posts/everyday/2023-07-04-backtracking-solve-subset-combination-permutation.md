@@ -101,6 +101,6 @@ var permute = function (nums) {
 };
 ```
 
-**Refs**
+**Refs:**
 
 [https://labuladong.gitbook.io/algo-en/iii.-algorithmic-thinking/subset_permutation_combination](https://labuladong.gitbook.io/algo-en/iii.-algorithmic-thinking/subset_permutation_combination)

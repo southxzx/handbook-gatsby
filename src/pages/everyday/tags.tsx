@@ -10,7 +10,7 @@ const EverydayTags: React.FC<PageProps> = ({ data }) => {
   return (
     <Layout>
       <div className="everyday-tags">
-        <BackButton />
+        <BackButton href="/" />
         <h1 className="text-4xl font-medium">🔖 Every-Tags</h1>
         <p className="text-xl text-grey font-light mt-5">
           Still everyday posts but categorized by tags
