@@ -12,17 +12,17 @@ const sections = [
       "Documenting my daily learning experiences (though not on a daily basis 😎)",
     href: "/everyday",
   },
-  {
-    key: "worlds-within-frames",
-    text: "📸 Worlds Within Frames",
-    description:
-      "Posting some pictures that I took, mostly about my life in Vietnam (coming soon)",
-    href: "",
-  },
+  // {
+  //   key: "worlds-within-frames",
+  //   text: "📸 Worlds Within Frames",
+  //   description:
+  //     "Posting some pictures that I took, mostly about my life in Vietnam (coming soon)",
+  //   href: "",
+  // },
   {
     key: "about",
     text: "👨🏼‍💻 About",
-    description: "Get to know me",
+    description: "",
     href: "/about",
   },
 ];
@@ -96,9 +96,11 @@ const IndexPage: React.FC<PageProps> = () => {
             <div key={section.key} className="mb-3">
               <Link to={section.href}>
                 <p className="text-lg hover:text-neutral">{section.text}</p>
-                <p className="ml-6 text-grey font-light">
-                  {section.description}
-                </p>
+                {section.description && (
+                  <p className="ml-6 text-grey font-light">
+                    {section.description}
+                  </p>
+                )}
               </Link>
             </div>
           ))}
