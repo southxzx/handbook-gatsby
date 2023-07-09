@@ -91,8 +91,8 @@ li {
 }
 
 .content-detail a {
-  color: #7a7a7a;
-  /* text-decoration: ; */
+  color: #54595f;
+  text-decoration: underline;
   font-size: 16px;
   font-weight: 400;
 }

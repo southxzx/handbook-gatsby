@@ -6,8 +6,12 @@ import Seo from "../../components/Seo";
 import pluralize from "../../utils";
 
 const BlogPost: React.FC<PageProps> = ({ data, children, ...rest }) => {
-  const { frontmatter, html, timeToRead, tableOfContents } = (data as any)
-    .markdownRemark;
+  const {
+    frontmatter = {},
+    html,
+    timeToRead,
+    tableOfContents,
+  } = (data as any).markdownRemark || {};
   return (
     <Layout>
       <div className="content-detail">
@@ -56,8 +60,8 @@ export const query = graphql`
 
 export const Head: React.FC<HeadProps> = ({ data }) => (
   <Seo
-    title={`${(data as any).markdownRemark.frontmatter.date} - ${
-      (data as any).markdownRemark.frontmatter.title
+    title={`${(data as any).markdownRemark?.frontmatter?.date} - ${
+      (data as any).markdownRemark?.frontmatter?.title
     }`}
   />
 );

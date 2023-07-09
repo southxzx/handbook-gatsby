@@ -1,5 +1,5 @@
 ---
-title: Event bubbling in JavaScript and React.js
+title: Event bubbling in JavaScript and React
 tags: ["javascript", "web", "react.js"]
 date: 2023/06/05
 slug: 2023-06-04-stop-propagation-prevent-default
