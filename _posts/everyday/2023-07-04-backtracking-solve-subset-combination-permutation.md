@@ -1,6 +1,6 @@
 ---
 title: Backtracking solve Subset/Combination/Permutation
-tags: ["algorithm"]
+tags: ["algorithm", "leetcode"]
 date: 2023/07/04
 slug: 2023-07-04-backtracking-solve-subset-combination-permutation
 ---
@@ -98,6 +98,33 @@ var permute = function (nums) {
   };
   backtrack([]);
   return res;
+};
+```
+
+## 4. Generate Parentheses (Leetcode 22)
+
+Input: `n = 3`
+
+Output: `["((()))","(()())","(())()","()(())","()()()"]`
+
+```Javascript
+var generateParenthesis = function(n) {
+    const res = [];
+    var backtrack = function(track, open, close) {
+        console.log(track);
+        if (track.length === n*2) {
+            res.push(track);
+            return;
+        }
+        if (open < n) {
+            backtrack(track + "(", open+1, close)
+        }
+        if (close < open) {
+            backtrack(track + ")", open, close+1)
+        }
+    }
+    backtrack([], 0, 0);
+    return res;
 };
 ```
 
