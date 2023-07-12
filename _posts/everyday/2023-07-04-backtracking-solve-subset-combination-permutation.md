@@ -128,6 +128,31 @@ var generateParenthesis = function(n) {
 };
 ```
 
+## 5. Combination Sum (Leetcode 39)
+
+Input: `candidates = [2,3,6,7], target = 7`
+Output: `[[2,2,3],[7]]`
+
+```Javascript
+var combinationSum = function(candidates, target) {
+    const res = [];
+    const backtrack = function(track, start, sum) {
+        if (sum === target) {
+            res.push([...track]);
+            return;
+        }
+        for (let i = start; i < candidates.length; i++) {
+            if (sum + candidates[i] > target) {
+                continue;
+            }
+            backtrack([...track, candidates[i]], i, sum + candidates[i])
+        }
+    }
+    backtrack([], 0, 0);
+    return res;
+};
+```
+
 **Refs:**
 
 [https://labuladong.gitbook.io/algo-en/iii.-algorithmic-thinking/subset_permutation_combination](https://labuladong.gitbook.io/algo-en/iii.-algorithmic-thinking/subset_permutation_combination)
