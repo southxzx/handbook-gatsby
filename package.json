@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/sarabun": "^5.0.5",
     "@mdx-js/react": "^2.3.0",
     "autoprefixer": "^10.4.14",
     "gatsby": "^5.11.0",

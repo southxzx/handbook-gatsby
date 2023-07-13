@@ -16,7 +16,7 @@ const BlogPost: React.FC<PageProps> = ({ data, children, ...rest }) => {
     <Layout>
       <div className="content-detail">
         <BackButton href="/everyday" />
-        <h1 className="text-4xl font-medium mb-3 overflow-hidden text-ellipsis">
+        <h1 className="text-4xl leading-[48px] font-medium mb-3 overflow-x-hidden text-ellipsis">
           {frontmatter.title}
         </h1>
         <span className="text-grey font-light text-sm">

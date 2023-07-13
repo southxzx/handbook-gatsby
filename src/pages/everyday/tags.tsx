@@ -57,7 +57,7 @@ const EverydayTags: React.FC<PageProps> = ({ data }) => {
                             {frontmatter.date}
                           </span>
                           &nbsp;-&nbsp;
-                          {frontmatter.title}
+                          <b>{frontmatter.title}</b>
                         </Link>
                       </div>
                     );

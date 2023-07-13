@@ -31,22 +31,6 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-mdx",
     {
-      resolve: `gatsby-omni-font-loader`,
-      options: {
-        enableListener: true,
-        preconnect: [
-          `https://fonts.googleapis.com`,
-          `https://fonts.gstatic.com`,
-        ],
-        web: [
-          {
-            name: `Figtree`,
-            file: `https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap`,
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [

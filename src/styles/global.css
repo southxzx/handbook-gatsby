@@ -38,7 +38,8 @@ body {
   background: var(--bg);
   margin: 0;
   padding: 0;
-  font-family: "Figtree";
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 300;
 }
 
 h1 {
@@ -88,6 +89,13 @@ li {
 li {
   list-style-type: disc;
   margin-left: 24px;
+}
+
+.content-detail blockquote {
+  border-left: 2px solid var(--lightGrey);
+  padding-left: 24px;
+  margin-left: 24px;
+  font-style: italic;
 }
 
 .content-detail a {

@@ -39,7 +39,7 @@ const EverydayPage: React.FC<PageProps> = ({ data }) => {
               >
                 <span className="text-grey font-light">{frontmatter.date}</span>
                 &nbsp;-&nbsp;
-                {frontmatter.title}
+                <b>{frontmatter.title}</b>
               </Link>
             </div>
           );
