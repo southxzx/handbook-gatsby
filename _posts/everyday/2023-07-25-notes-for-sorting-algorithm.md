@@ -157,3 +157,7 @@ function quickSort(arr) {
 Space Complexity: O(log(n)) - Time Complexity: O(n\*log(n)).
 
 There're many other sorting algorithms such as: Heap sort, Counting sort, Radix sort, Bucket sort.
+
+**Refs:**
+
+https://www.freecodecamp.org/news/sorting-algorithms-explained-with-examples-in-python-java-and-c/
