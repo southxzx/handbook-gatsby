@@ -1,5 +1,5 @@
 ---
-title: Notes for sorting algorithm
+title: Notes for sorting algorithms
 tags: ["algorithm"]
 date: 2023/07/25
 slug: 2023-07-25-notes-for-sorting-algorithm
@@ -120,3 +120,40 @@ function merge(left, right) {
 ```
 
 Space Complexity: O(n) - Time Complexity: O(n\*log(n)).
+
+## 5. Quick sort
+
+**Divide and Conquer** algorithm.
+
+- Choose `pivot` (usually last index).
+- Partitioning: sort all elements less than `pivot` --> `left`, greater than `pivot` --> `right`.
+- Call Quicksort recursively.
+
+```js
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const pivotIndex = arr.length - 1;
+  let i = 0;
+
+  for (let j = 0; j < pivotIndex; j++) {
+    if (arr[j] < arr[pivotIndex]) {
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+      i++;
+    }
+  }
+
+  [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+
+  const left = arr.slice(0, i);
+  const right = arr.slice(i + 1);
+
+  return quickSort(left).concat(arr[i], quickSort(right));
+}
+```
+
+Space Complexity: O(log(n)) - Time Complexity: O(n\*log(n)).
+
+There're many other sorting algorithms such as: Heap sort, Counting sort, Radix sort, Bucket sort.
