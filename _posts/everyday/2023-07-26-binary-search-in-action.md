@@ -5,9 +5,9 @@ date: 2023/07/26
 slug: 2023-07-26-binary-search-in-action
 ---
 
-We can use **Binary Search** to search for an element with just O(n\*log(n)) time complexity. --> belongs to **Divide and Conquer** algorithmic technique.
+We can use **Binary Search** to search for an element with just O(log n) time complexity --> belongs to **Divide and Conquer** algorithmic technique.
 
-Let take an example with the problem 34 on Leetcode:
+Let's take an example with problem 34 on Leetcode:
 
 > Find First and Last Position of Element in Sorted Array
 
