@@ -179,3 +179,9 @@ code[class*="language-"] {
 .gatsby-highlight .token.operator {
   background-color: transparent;
 }
+
+/* life within frames */
+
+.bg-dotted {
+  background: url("../images/circle-4.svg");
+}

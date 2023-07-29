@@ -1,22 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import vietnam_paths from "../../utils/vietnam";
 import Province from "./Province";
 import useMouse from "../../hooks/useMouse";
+import useHover from "../../hooks/useHover";
 
 const VietNamMaps: React.FC = () => {
-  const actives = ["DAKLAK", "DAKKNONG", "PHUYEN", "KHANHHOA", "BINHDUONG"];
+  const actives = ["DAKLAK", "DAKNONG", "PHUYEN", "KHANHHOA", "BINHDUONG"];
   const [rect, setRect] = React.useState<DOMRect | null>(null);
   const [provinceKey, setProvinceKey] = React.useState<string>("");
 
   const { x, y } = useMouse();
 
-  const onHovered = (_rect: DOMRect, _provinceKey: string) => {
+  const onHovered = (
+    _rect: DOMRect,
+    _provinceKey: string,
+    _isHovered: boolean
+  ) => {
+    if (!_isHovered) {
+      const elements = document.elementsFromPoint(_rect.left, _rect.top);
+      console.log(
+        "🚀 ~ file: index.tsx:22 ~ isProvinceExisted(elements):",
+        elements
+      );
+      if (!isProvinceExisted(elements)) {
+        setRect(null);
+        setProvinceKey("");
+      }
+    }
     setRect(_rect);
     setProvinceKey(_provinceKey);
   };
 
+  const isProvinceExisted = (els: Element[]) => {
+    return els.some((el) => el.tagName === "path");
+  };
+
   return (
-    <div className="relative">
+    <div className="relative h-full">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 388.614 540.548"
@@ -50,16 +70,16 @@ const VietNamMaps: React.FC = () => {
       </svg>
       {rect && (
         <div
-          className="rounded-md shadow-md w-max p-3 bg-[#ffffff]"
+          className="rounded-md border border-light shadow-sm w-max p-3 bg-[#ffffff]"
           style={{
             position: "absolute",
-            top: y + 4,
-            left: x + 4,
+            top: y - 40,
+            left: x - 40,
             // border: "1px solid #000",
             // zIndex: 100,
           }}
         >
-          <p className="text-grey font-light text-sm">{provinceKey}</p>
+          <p className="text-grey text-sm font-bold">#{provinceKey}</p>
         </div>
       )}
     </div>

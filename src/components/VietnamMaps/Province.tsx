@@ -3,7 +3,7 @@ import useHover from "../../hooks/useHover";
 
 interface IProvinceProps extends SVGProps<SVGPathElement> {
   isVisited?: boolean;
-  onHovered?: (rect: DOMRect, provinceKey: string) => void;
+  onHovered?: (rect: DOMRect, provinceKey: string, isHovered: boolean) => void;
 }
 
 const Province: React.FC<IProvinceProps> = ({
@@ -13,9 +13,9 @@ const Province: React.FC<IProvinceProps> = ({
 }) => {
   const { ref, isHovered } = useHover();
   useEffect(() => {
-    if (ref.current && isHovered) {
+    if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
-      onHovered?.(rect, rest.id || "");
+      onHovered?.(rect, rest.id || "", isHovered);
     }
   }, [isHovered]);
 
