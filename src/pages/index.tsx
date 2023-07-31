@@ -12,13 +12,13 @@ const sections = [
       "Documenting my daily learning experiences (though not on a daily basis 😎)",
     href: "/everyday",
   },
-  // {
-  //   key: "worlds-within-frames",
-  //   text: "📸 Worlds Within Frames",
-  //   description:
-  //     "Posting some pictures that I took, mostly about my life in Vietnam (coming soon)",
-  //   href: "",
-  // },
+  {
+    key: "life-within-frames",
+    text: "📸 Life Within Frames",
+    description:
+      "Posting some pictures that I took, mostly about my life in Vietnam (coming soon)",
+    href: "/life-within-frames",
+  },
   {
     key: "about",
     text: "👨🏼‍💻 About",
