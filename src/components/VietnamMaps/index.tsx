@@ -2,12 +2,25 @@ import React, { useEffect } from "react";
 import vietnam_paths from "../../utils/vietnam";
 import Province from "./Province";
 import useMouse from "../../hooks/useMouse";
-import useHover from "../../hooks/useHover";
+import { ParseDMS } from "../../utils/convert";
+import { VIETNAM_COORDINATE } from "../../utils/constants";
+import Pin from "./Pin";
 
-const VietNamMaps: React.FC = () => {
-  const actives = ["DAKLAK", "DAKNONG", "PHUYEN", "KHANHHOA", "BINHDUONG"];
-  const [rect, setRect] = React.useState<DOMRect | null>(null);
+interface VietNamMapsProps {
+  pinLocations?: Array<{
+    lng: number;
+    lat: number;
+    key: string;
+  }>;
+}
+
+const VietNamMaps: React.FC<VietNamMapsProps> = ({ pinLocations }) => {
+  const actives: string[] = [];
+  const [currentProvinceRect, setCurrentProvinceRect] =
+    React.useState<DOMRect | null>(null);
+  const [ratioMap, setRatioMap] = React.useState<number>(1);
   const [provinceKey, setProvinceKey] = React.useState<string>("");
+  const mapRef = React.useRef<SVGSVGElement>(null);
 
   const { x, y } = useMouse();
 
@@ -17,23 +30,23 @@ const VietNamMaps: React.FC = () => {
     _isHovered: boolean
   ) => {
     if (!_isHovered) {
-      const elements = document.elementsFromPoint(_rect.left, _rect.top);
-      console.log(
-        "🚀 ~ file: index.tsx:22 ~ isProvinceExisted(elements):",
-        elements
-      );
-      if (!isProvinceExisted(elements)) {
-        setRect(null);
-        setProvinceKey("");
-      }
+      setCurrentProvinceRect(null);
+      setProvinceKey("");
+      return;
     }
-    setRect(_rect);
-    setProvinceKey(_provinceKey);
+    setTimeout(() => {
+      setCurrentProvinceRect(_rect);
+      setProvinceKey(_provinceKey);
+    }, 0);
   };
 
-  const isProvinceExisted = (els: Element[]) => {
-    return els.some((el) => el.tagName === "path");
-  };
+  useEffect(() => {
+    const rectMap = mapRef.current?.getBoundingClientRect() || new DOMRect();
+    const ratio =
+      (rectMap.bottom - rectMap.top) /
+      (VIETNAM_COORDINATE.LAT_N - VIETNAM_COORDINATE.LAT_S);
+    setRatioMap(ratio);
+  }, []);
 
   return (
     <div className="relative h-full">
@@ -41,6 +54,7 @@ const VietNamMaps: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 388.614 540.548"
         className="h-full w-fit mx-auto"
+        ref={mapRef}
       >
         <g id="_2022">
           {Object.entries(vietnam_paths).map(([key, value]) => {
@@ -68,20 +82,32 @@ const VietNamMaps: React.FC = () => {
           })}
         </g>
       </svg>
-      {rect && (
-        <div
-          className="rounded-md border border-light shadow-sm w-max p-3 bg-[#ffffff]"
-          style={{
-            position: "absolute",
-            top: y - 40,
-            left: x - 40,
-            // border: "1px solid #000",
-            // zIndex: 100,
-          }}
-        >
-          <p className="text-grey text-sm font-bold">#{provinceKey}</p>
-        </div>
-      )}
+
+      <div
+        className={`maps-popover-sticky ${
+          currentProvinceRect ? "show" : "hide"
+        }`}
+        style={{
+          top: y - 40,
+          left: x - 40,
+        }}
+      >
+        <p className="text-grey text-sm font-bold">#{provinceKey}</p>
+      </div>
+
+      <div>
+        {pinLocations?.map((pin) => {
+          return (
+            <Pin
+              lat={pin.lat}
+              lng={pin.lng}
+              key={pin.key}
+              id={pin.key}
+              ratioMap={ratioMap}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

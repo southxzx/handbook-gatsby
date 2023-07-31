@@ -185,3 +185,9 @@ code[class*="language-"] {
 .bg-dotted {
   background: url("../images/circle-4.svg");
 }
+.maps-popover-sticky.show {
+  @apply block rounded-md border border-light shadow-sm w-max p-3 bg-[#ffffff] absolute duration-300 z-20;
+}
+.maps-popover-sticky.hide {
+  @apply hidden duration-300;
+}
