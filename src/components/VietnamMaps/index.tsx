@@ -49,7 +49,7 @@ const VietNamMaps: React.FC<VietNamMapsProps> = ({ pinLocations }) => {
   }, []);
 
   return (
-    <div className="relative h-full">
+    <div className="relative h-full w-full">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 388.614 540.548"
@@ -89,7 +89,7 @@ const VietNamMaps: React.FC<VietNamMapsProps> = ({ pinLocations }) => {
         }`}
         style={{
           top: y - 40,
-          left: x - 40,
+          left: x - (mapRef.current?.getBoundingClientRect()?.left || 0) + 40,
         }}
       >
         <p className="text-grey text-sm font-bold">#{provinceKey}</p>
