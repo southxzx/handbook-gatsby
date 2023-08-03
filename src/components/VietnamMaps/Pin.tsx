@@ -13,9 +13,10 @@ interface IPinProps {
   key: string;
   ratioMap: number;
   id: string;
+  images: any[];
 }
 
-const Pin: React.FC<IPinProps> = ({ lng, lat, key, ratioMap, id }) => {
+const Pin: React.FC<IPinProps> = ({ lng, lat, key, ratioMap, id, images }) => {
   const { ref, isHovered } = useHover();
 
   const top = (VIETNAM_COORDINATE.LAT_N - lat) * ratioMap - MAP_PIN_HEIGHT;
@@ -61,7 +62,12 @@ const Pin: React.FC<IPinProps> = ({ lng, lat, key, ratioMap, id }) => {
           </div>
         </div>
       )}
-      <Modal open={openPopUp} onClose={() => setOpenPopUp(false)} />
+      <Modal
+        open={openPopUp}
+        onClose={() => setOpenPopUp(false)}
+        pinId={id}
+        images={images}
+      />
     </div>
   );
 };

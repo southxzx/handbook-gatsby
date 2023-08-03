@@ -44,6 +44,12 @@ const LifeWithinFramesPage: React.FC = () => {
                 lat: 12.6805937,
                 lng: 108.0350447,
                 key: "BUON_MA_THUOT",
+                images: [
+                  {
+                    url: "https://i.imgur.com/tAkvCW2.jpg",
+                    title: "Một góc bảo tàng cà phê Tp. BMT",
+                  },
+                ],
               },
               {
                 lat: 12.9048279,

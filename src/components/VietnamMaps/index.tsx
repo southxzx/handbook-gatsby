@@ -2,16 +2,12 @@ import React, { useEffect } from "react";
 import vietnam_paths from "../../utils/vietnam";
 import Province from "./Province";
 import useMouse from "../../hooks/useMouse";
-import { ParseDMS } from "../../utils/convert";
 import { VIETNAM_COORDINATE } from "../../utils/constants";
 import Pin from "./Pin";
+import IPin from "../../types/pin";
 
 interface VietNamMapsProps {
-  pinLocations?: Array<{
-    lng: number;
-    lat: number;
-    key: string;
-  }>;
+  pinLocations?: IPin[];
 }
 
 const VietNamMaps: React.FC<VietNamMapsProps> = ({ pinLocations }) => {
@@ -104,6 +100,7 @@ const VietNamMaps: React.FC<VietNamMapsProps> = ({ pinLocations }) => {
               key={pin.key}
               id={pin.key}
               ratioMap={ratioMap}
+              images={pin.images || []}
             />
           );
         })}
