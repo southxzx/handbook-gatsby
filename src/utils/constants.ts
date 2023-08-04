@@ -1,0 +1,13 @@
+const VIETNAM_COORDINATE = {
+  LAT_E: 14.058324,
+  LAT_N: 23.392672,
+  LAT_S: 8.563602,
+  LNG_E: 110.782471,
+  LNG_W: 102.14404,
+};
+// Those values based on Google Map.
+
+const MAP_PIN_HEIGHT = 17;
+const MAP_PIN_WIDTH = 7;
+
+export { VIETNAM_COORDINATE, MAP_PIN_HEIGHT, MAP_PIN_WIDTH };
