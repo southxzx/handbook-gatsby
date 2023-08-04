@@ -5,9 +5,16 @@ import BackButton from "../../components/BackButton";
 import Layout from "../../components/Layout";
 import Seo from "../../components/Seo";
 
+var LIMIT = 12;
+
 const EverydayPage: React.FC<PageProps> = ({ data }) => {
   const posts = (data as any).allMarkdownRemark.edges || [];
   const totalCount = (data as any).allMarkdownRemark.totalCount || 0;
+
+  const [page, setPage] = React.useState(1);
+
+  const handleSeeMore = () => setPage((prev) => prev + 1);
+
   return (
     <Layout>
       <BackButton href="/" />
@@ -29,7 +36,7 @@ const EverydayPage: React.FC<PageProps> = ({ data }) => {
             🔖 Categorize by tags
           </Link>
         </div>
-        {posts.map((post: any) => {
+        {posts.slice(0, LIMIT * page).map((post: any) => {
           const frontmatter = post.node.frontmatter;
           return (
             <div key={frontmatter.slug}>
@@ -44,6 +51,14 @@ const EverydayPage: React.FC<PageProps> = ({ data }) => {
             </div>
           );
         })}
+        {posts.length > LIMIT * page && (
+          <button
+            className="text-neutral font-light mt-2"
+            onClick={handleSeeMore}
+          >
+            {"> see more"}
+          </button>
+        )}
       </div>
     </Layout>
   );
