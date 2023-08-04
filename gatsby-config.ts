@@ -108,14 +108,6 @@ const config: GatsbyConfig = {
         icon: "src/images/favicon_v.png",
       },
     },
-    {
-      resolve: "gatsby-plugin-react-svg",
-      options: {
-        rule: {
-          include: /images/,
-        },
-      },
-    },
   ],
 };
 

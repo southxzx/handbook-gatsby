@@ -5,7 +5,7 @@ import useMouse from "../../hooks/useMouse";
 import { VIETNAM_COORDINATE } from "../../utils/constants";
 import Pin from "./Pin";
 import IPin from "../../types/pin";
-
+import VietnamText from "../../images/svgs/Vietnam";
 interface VietNamMapsProps {
   pinLocations?: IPin[];
 }
@@ -46,64 +46,71 @@ const VietNamMaps: React.FC<VietNamMapsProps> = ({ pinLocations }) => {
 
   return (
     <div className="relative h-full w-full">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 388.614 540.548"
-        className="h-full w-fit mx-auto"
-        ref={mapRef}
-      >
-        <g id="_2022">
-          {Object.entries(vietnam_paths).map(([key, value]) => {
-            // HOANGSA-TRUONGSA
-            if (Array.isArray(value)) {
+      <div className="uppercase absolute left-[50%] translate-x-[-50%] translate-y-[-50%] top-[50%] z-[0]">
+        <VietnamText />
+      </div>
+      <div className="z-[1] absolute flex w-full justify-center top-0 bottom-0">
+        <div className="relative">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 388.614 540.548"
+            className="h-full"
+            ref={mapRef}
+          >
+            <g id="_2022">
+              {Object.entries(vietnam_paths).map(([key, value]) => {
+                // HOANGSA-TRUONGSA
+                if (Array.isArray(value)) {
+                  return (
+                    <g key={key}>
+                      {value.map((v) => {
+                        return <Province key={v} d={v} />;
+                      })}
+                    </g>
+                  );
+                } else {
+                  const isActive = actives.includes(key);
+                  return (
+                    <Province
+                      isVisited={isActive}
+                      key={key}
+                      id={key}
+                      d={value}
+                      onHovered={onHovered}
+                    />
+                  );
+                }
+              })}
+            </g>
+          </svg>
+          <div
+            className={`maps-popover-sticky ${
+              currentProvinceRect ? "show" : "hide"
+            }`}
+            style={{
+              top: y - 40,
+              left:
+                x - (mapRef.current?.getBoundingClientRect()?.left || 0) + 40,
+            }}
+          >
+            <p className="text-grey text-sm font-bold">#{provinceKey}</p>
+          </div>
+
+          <div>
+            {pinLocations?.map((pin) => {
               return (
-                <g key={key}>
-                  {value.map((v) => {
-                    return <Province key={v} d={v} />;
-                  })}
-                </g>
-              );
-            } else {
-              const isActive = actives.includes(key);
-              return (
-                <Province
-                  isVisited={isActive}
-                  key={key}
-                  id={key}
-                  d={value}
-                  onHovered={onHovered}
+                <Pin
+                  lat={pin.lat}
+                  lng={pin.lng}
+                  key={pin.key}
+                  id={pin.key}
+                  ratioMap={ratioMap}
+                  images={pin.images || []}
                 />
               );
-            }
-          })}
-        </g>
-      </svg>
-
-      <div
-        className={`maps-popover-sticky ${
-          currentProvinceRect ? "show" : "hide"
-        }`}
-        style={{
-          top: y - 40,
-          left: x - (mapRef.current?.getBoundingClientRect()?.left || 0) + 40,
-        }}
-      >
-        <p className="text-grey text-sm font-bold">#{provinceKey}</p>
-      </div>
-
-      <div>
-        {pinLocations?.map((pin) => {
-          return (
-            <Pin
-              lat={pin.lat}
-              lng={pin.lng}
-              key={pin.key}
-              id={pin.key}
-              ratioMap={ratioMap}
-              images={pin.images || []}
-            />
-          );
-        })}
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

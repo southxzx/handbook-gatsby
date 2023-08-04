@@ -1,8 +1,8 @@
 import React from "react";
-import XSquare from "../../images/x-square.svg";
-import ChevronLeft from "../../images/chevron-left.svg";
-import ChevronRight from "../../images/chevron-right.svg";
 import { useKeyPress } from "../../hooks/useKeyPress";
+import ChevronLeft from "../../images/svgs/ChevronLeft";
+import ChevronRight from "../../images/svgs/ChevronRight";
+import XSquare from "../../images/svgs/XSquare";
 
 interface IModalProps {
   open?: boolean;

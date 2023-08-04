@@ -17,7 +17,7 @@ const LifeWithinFramesPage: React.FC = () => {
         <BackButton />
       </div>
       <div className="flex items-center justify-center border border-light rounded-xl">
-        <div className="h-[calc(100vh-51px)] p-[25.5px]">
+        <div className="h-[calc(100vh-51px)] w-full p-[25.5px]">
           <VietNamMaps
             pinLocations={[
               {
