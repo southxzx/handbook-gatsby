@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useKeyPress } from "../../hooks/useKeyPress";
 import ChevronLeft from "../../images/svgs/ChevronLeft";
 import ChevronRight from "../../images/svgs/ChevronRight";
@@ -23,7 +23,7 @@ const Modal: React.FC<IModalProps> = ({
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   const imageBasedClass =
-    "object-contain rounded-lg mx-auto border border-neutral duration-700 border-dashed absolute";
+    "object-contain rounded-lg mx-auto border-[2px] border-neutral duration-700 absolute max-w-full max-h-full";
   const imageSlidePrev = " left-[-50%] top-0 opacity-0 scale-50";
   const imageSlideNext = " left-[50%] top-0 opacity-0 scale-50";
   const imageSlideCurrent = " scale-100 left-0 right-0 opacity-1";
@@ -46,6 +46,10 @@ const Modal: React.FC<IModalProps> = ({
     }
   };
 
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [open]);
+
   if (!open) {
     return null;
   }
@@ -59,7 +63,7 @@ const Modal: React.FC<IModalProps> = ({
         duration-200 rounded-lg z-[200] w-[80%] h-[80%]"
         >
           <div className="max-w-[920px] h-full mx-auto">
-            <div className="flex justify-between">
+            <div className="flex justify-between pb-2">
               <p className="font-normal text-[16px] leading-6 text-neutral">
                 {`${activeIndex + 1} / ${images?.length} - #${pinId}`}
               </p>
@@ -104,7 +108,7 @@ const Modal: React.FC<IModalProps> = ({
             <ChevronRight />
           </button>
           <button
-            className="absolute bottom-[-12px] right-[50%] flex items-center gap-1"
+            className="absolute bottom-[-28px] right-[50%] translate-x-[50%] flex items-center gap-1"
             onClick={onClose}
           >
             <XSquare />{" "}

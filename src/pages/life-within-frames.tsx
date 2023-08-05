@@ -4,12 +4,6 @@ import Seo from "../components/Seo";
 import VietNamMaps from "../components/VietnamMaps";
 import BackButton from "../components/BackButton";
 
-const imgs = [
-  "https://c0.wallpaperflare.com/preview/280/30/526/seoul-korea-mac-wallpaper-pc-wallpaper.jpg",
-  "https://c1.wallpaperflare.com/preview/286/169/190/neon-person-night-city.jpg",
-  "https://c1.wallpaperflare.com/preview/656/797/170/street-photography-neon-night-photography-drone.jpg",
-];
-
 const LifeWithinFramesPage: React.FC = () => {
   return (
     <div className="p-[25.5px] bg-dotted overflow-hidden relative">
@@ -49,12 +43,67 @@ const LifeWithinFramesPage: React.FC = () => {
                     url: "https://i.imgur.com/tAkvCW2.jpg",
                     title: "Một góc bảo tàng cà phê Tp. BMT",
                   },
+                  {
+                    url: "https://i.imgur.com/IeXta3w.jpeg",
+                    title: "Tranh các loại cà phê trên thế giới",
+                  },
+                  {
+                    url: "https://i.imgur.com/bkGUNX2.jpeg",
+                    title: "Các máy xay cà phê",
+                  },
+                  {
+                    url: "https://i.imgur.com/TnUevAy.jpeg",
+                    title: "Máy này nhìn hơi 'nguyên thuỷ'",
+                  },
+                  {
+                    url: "https://i.imgur.com/ZlH05rh.jpeg",
+                    title: "Mẫu hạt cà phê được trưng bày",
+                  },
+                  {
+                    url: "https://i.imgur.com/Mxz5wT7.jpeg",
+                    title: "Một góc của toà nhà bảo tàng",
+                  },
                 ],
               },
               {
                 lat: 12.9048279,
                 lng: 109.1413666,
                 key: "VUNG_RO",
+              },
+              {
+                lat: 13.204981,
+                lng: 109.048711,
+                key: "PHÚ_YÊN",
+                images: [
+                  {
+                    url: "https://i.imgur.com/cq8IbaN.jpeg",
+                    title: "Biển đêm gần tháp Nghinh Phong",
+                  },
+                  {
+                    url: "https://i.imgur.com/CmwyMpf.jpeg",
+                    title: "Chụp tháp Nginh Phong từ bãi biển",
+                  },
+                  {
+                    url: "https://i.imgur.com/QTsWpw5.jpeg",
+                    title: "Chụp tháp Nginh Phong từ bãi biển (ngang)",
+                  },
+                  {
+                    url: "https://i.imgur.com/IyiSyax.jpeg",
+                    title: "Biển sáng sớm gần chỗ homestay 😅",
+                  },
+                  {
+                    url: "https://i.imgur.com/9Pa042o.jpeg",
+                    title: "Bàn của quán ăn trên bãi biển",
+                  },
+                  {
+                    url: "https://i.imgur.com/i3yP586.jpeg",
+                    title: "Đi lội sóng với bạn mình 😎",
+                  },
+                  {
+                    url: "https://i.imgur.com/WlH8dx1.jpeg",
+                    title: "Nắng xuyên qua lớp mây mù sáng sớm",
+                  },
+                ],
               },
             ]}
           />
