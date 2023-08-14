@@ -10,38 +10,6 @@ const imgs = [
   "https://c1.wallpaperflare.com/preview/656/797/170/street-photography-neon-night-photography-drone.jpg",
 ];
 
-const getExactLocation = (x: number, y: number) => {
-  return {
-    x: x + 51,
-    y: y + 51,
-  };
-};
-
-function convertLatLngToPixel(
-  latitude: number,
-  longitude: number,
-  zoom: number
-) {
-  const TILE_SIZE = 256; // Tile size used in Web Mercator projection
-  const earthRadius = 6378137; // Earth's radius in meters
-
-  const latRad = (latitude * Math.PI) / 180;
-  const x = ((longitude + 180) / 360) * TILE_SIZE * Math.pow(2, zoom);
-  const y =
-    (0.5 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / (2 * Math.PI)) *
-    TILE_SIZE *
-    Math.pow(2, zoom);
-
-  return { x, y };
-}
-
-// Example usage:
-const latitude = 37.7749; // Latitude
-const longitude = -122.4194; // Longitude
-const zoomLevel = 12; // Zoom level of the map
-
-const pixelPosition = convertLatLngToPixel(latitude, longitude, zoomLevel);
-
 const LifeWithinFramesPage: React.FC = () => {
   return (
     <div className="p-[25.5px] bg-dotted overflow-hidden relative">
@@ -49,7 +17,7 @@ const LifeWithinFramesPage: React.FC = () => {
         <BackButton />
       </div>
       <div className="flex items-center justify-center border border-light rounded-xl">
-        <div className="h-[calc(100vh-51px)] p-[25.5px]">
+        <div className="h-[calc(100vh-51px)] w-full p-[25.5px]">
           <VietNamMaps
             pinLocations={[
               {
@@ -71,6 +39,22 @@ const LifeWithinFramesPage: React.FC = () => {
                 lat: 14.1264939,
                 lng: 108.853972,
                 key: "ĐỀ_GI",
+              },
+              {
+                lat: 12.6805937,
+                lng: 108.0350447,
+                key: "BUON_MA_THUOT",
+                images: [
+                  {
+                    url: "https://i.imgur.com/tAkvCW2.jpg",
+                    title: "Một góc bảo tàng cà phê Tp. BMT",
+                  },
+                ],
+              },
+              {
+                lat: 12.9048279,
+                lng: 109.1413666,
+                key: "VUNG_RO",
               },
             ]}
           />
@@ -96,6 +80,6 @@ const LifeWithinFramesPage: React.FC = () => {
   );
 };
 
-export const Head: HeadFC = () => <Seo title="Southxzx's Handbook" />;
+export const Head: HeadFC = () => <Seo title="Life Within Frames" />;
 
 export default LifeWithinFramesPage;
