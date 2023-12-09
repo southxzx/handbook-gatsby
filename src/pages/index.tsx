@@ -27,48 +27,6 @@ const sections = [
   },
 ];
 
-const socials = [
-  {
-    key: "github",
-    text: "Github",
-    href: "https://github.com/southxzx",
-    icon: (
-      <StaticImage
-        src="/icons/social/github.svg"
-        width={24}
-        height={24}
-        alt="Github"
-      />
-    ),
-  },
-  {
-    key: "linkedin",
-    text: "Linkedin",
-    href: "https://www.linkedin.com/in/southxzx/",
-    icon: (
-      <StaticImage
-        src="/icons/social/linkedin.svg"
-        width={24}
-        height={24}
-        alt="Linkedin"
-      />
-    ),
-  },
-  // {
-  //   key: "twitter",
-  //   text: "Twitter",
-  //   href: "",
-  //   icon: (
-  //     <StaticImage
-  //       src="/icons/social/twitter.svg"
-  //       width={24}
-  //       height={24}
-  //       alt="Twitter"
-  //     />
-  //   ),
-  // },
-];
-
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
@@ -87,7 +45,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </div>
 
         <p className="text-xl text-neutral font-light mt-5">
-          My name is Nam, I&apos;m glad that you found me here.
+          My name is Nam (Daniel), I&apos;m glad that you found me here.
         </p>
         {/* <BlinkingTextCursor /> */}
 
@@ -101,16 +59,6 @@ const IndexPage: React.FC<PageProps> = () => {
                     {section.description}
                   </p>
                 )}
-              </Link>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-10 flex items-center">
-          {socials.map((social) => (
-            <div className="mr-2" key={social.key}>
-              <Link to={social.href} target="_blank" rel="nofollow">
-                {social.icon}
               </Link>
             </div>
           ))}
