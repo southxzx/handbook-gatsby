@@ -102,6 +102,7 @@ const VietNamMaps: React.FC<VietNamMapsProps> = ({ pinLocations }) => {
                 <Pin
                   lat={pin.lat}
                   lng={pin.lng}
+                  pinKey={pin.key}
                   key={pin.key}
                   id={pin.key}
                   ratioMap={ratioMap}
