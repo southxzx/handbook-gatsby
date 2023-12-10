@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useKeyPress } from "../../hooks/useKeyPress";
 
 import "./styles/ModalGallery.scss";
+import XSquare from "../../images/svgs/XSquare";
 
 interface IModalProps {
   open?: boolean;
@@ -62,6 +63,11 @@ const Modal: React.FC<IModalProps> = ({
         duration-200 rounded-lg z-[200] w-[80%] h-[80%]"
         >
           <div className="max-w-[668px] max-h-[700px] mx-auto relative">
+            <div className="w-full text-right">
+              <button className="hover:opacity-75" onClick={onClose}>
+                <XSquare/>
+              </button>
+            </div>
             <div className="flex justify-between pb-2">
               {/* <p className="font-normal text-[16px] leading-6 text-neutral">
                 {`${activeIndex + 1} / ${images?.length} - #${pinId}`}
@@ -92,19 +98,6 @@ const Modal: React.FC<IModalProps> = ({
                   No available images
                 </span>
               )}
-            </div>
-            <div className="text-center mt-4 text-xl">
-              <button className="pr-2 hover:opacity-75" onClick={onPrev}>
-                ⬅️
-                {/* <ChevronLeft /> */}
-              </button>
-              <button className="hover:opacity-75" onClick={onClose}>
-                ❎{/* <XSquare />{" "} */}
-              </button>
-              <button className="pl-2 hover:opacity-75" onClick={onNext}>
-                {/* <ChevronRight /> */}
-                ➡️
-              </button>
             </div>
           </div>
         </div>

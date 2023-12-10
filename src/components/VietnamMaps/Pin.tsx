@@ -36,6 +36,12 @@ const Pin: React.FC<IPinProps> = ({
 
   const [openPopUp, setOpenPopUp] = React.useState(false);
 
+  const onPinClick = () => {
+    if (first4Images.length) {
+      setOpenPopUp(true);
+    }
+  };
+
   return (
     <>
       <div
@@ -47,11 +53,7 @@ const Pin: React.FC<IPinProps> = ({
           lineHeight: "22px",
         }}
       >
-        <span
-          className="cursor-pointer"
-          ref={ref}
-          onClick={() => setOpenPopUp(true)}
-        >
+        <span className="cursor-pointer" ref={ref} onClick={onPinClick}>
           📷
         </span>
         {isHovered && (
@@ -76,7 +78,7 @@ const Pin: React.FC<IPinProps> = ({
                   />
                 ))
               ) : (
-                <p className="text-grey text-sm">No images</p>
+                <p className="text-grey text-sm">No images 😭</p>
               )}
               {restImages.length > 0 && (
                 <p className="text-grey text-sm font-bold text-right">

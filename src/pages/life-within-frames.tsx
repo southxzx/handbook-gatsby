@@ -4,13 +4,7 @@ import Seo from "../components/Seo";
 import VietNamMaps from "../components/VietnamMaps";
 import BackButton from "../components/BackButton";
 
-import vungtau from "../../_images/vungtau.json";
-import hue from "../../_images/hue.json";
-import danang from "../../_images/danang.json";
-import hoian from "../../_images/hoian.json";
-import bmt from "../../_images/buonmathuot.json";
-import phuyen from "../../_images/phuyen.json";
-import phuquy from "../../_images/phuquy.json";
+import location from "../../_images";
 
 const LifeWithinFramesPage: React.FC = () => {
   return (
@@ -20,9 +14,7 @@ const LifeWithinFramesPage: React.FC = () => {
       </div>
       <div className="flex items-center justify-center border border-light rounded-xl">
         <div className="h-[calc(100vh-51px)] w-full p-[25.5px]">
-          <VietNamMaps
-            pinLocations={[hue, danang, hoian, bmt, phuyen, vungtau, phuquy]}
-          />
+          <VietNamMaps pinLocations={Object.values(location)} />
         </div>
         {/* <div className="flex-1 p-[25.5px] rounded-e-xl">
           <p className="font-bold text-grey">#PROVINCE</p>
