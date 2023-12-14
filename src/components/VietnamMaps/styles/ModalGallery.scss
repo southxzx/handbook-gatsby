@@ -1,0 +1,15 @@
+.image_square {
+  @apply w-[220px] h-[220px] relative;
+  img {
+    @apply w-full h-full object-cover;
+  }
+  &::after {
+    @apply absolute w-full h-full content-[""] block bg-black opacity-0 top-0 left-0;
+  }
+  &:hover {
+    @apply cursor-pointer;
+    &::after {
+      @apply opacity-50 duration-0;
+    }
+  }
+}

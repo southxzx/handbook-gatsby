@@ -4,11 +4,7 @@ import Seo from "../components/Seo";
 import VietNamMaps from "../components/VietnamMaps";
 import BackButton from "../components/BackButton";
 
-const imgs = [
-  "https://c0.wallpaperflare.com/preview/280/30/526/seoul-korea-mac-wallpaper-pc-wallpaper.jpg",
-  "https://c1.wallpaperflare.com/preview/286/169/190/neon-person-night-city.jpg",
-  "https://c1.wallpaperflare.com/preview/656/797/170/street-photography-neon-night-photography-drone.jpg",
-];
+import location from "../../_images";
 
 const LifeWithinFramesPage: React.FC = () => {
   return (
@@ -18,46 +14,7 @@ const LifeWithinFramesPage: React.FC = () => {
       </div>
       <div className="flex items-center justify-center border border-light rounded-xl">
         <div className="h-[calc(100vh-51px)] w-full p-[25.5px]">
-          <VietNamMaps
-            pinLocations={[
-              {
-                lat: 16.265227,
-                lng: 107.430101,
-                key: "HUẾ",
-              },
-              {
-                lat: 16.074821,
-                lng: 107.829735,
-                key: "DA_NANG",
-              },
-              {
-                lat: 15.782616,
-                lng: 108.028148,
-                key: "HOI_AN",
-              },
-              {
-                lat: 14.1264939,
-                lng: 108.853972,
-                key: "ĐỀ_GI",
-              },
-              {
-                lat: 12.6805937,
-                lng: 108.0350447,
-                key: "BUON_MA_THUOT",
-                images: [
-                  {
-                    url: "https://i.imgur.com/tAkvCW2.jpg",
-                    title: "Một góc bảo tàng cà phê Tp. BMT",
-                  },
-                ],
-              },
-              {
-                lat: 12.9048279,
-                lng: 109.1413666,
-                key: "VUNG_RO",
-              },
-            ]}
-          />
+          <VietNamMaps pinLocations={Object.values(location)} />
         </div>
         {/* <div className="flex-1 p-[25.5px] rounded-e-xl">
           <p className="font-bold text-grey">#PROVINCE</p>

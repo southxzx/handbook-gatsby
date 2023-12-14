@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useKeyPress } from "../../hooks/useKeyPress";
-import ChevronLeft from "../../images/svgs/ChevronLeft";
-import ChevronRight from "../../images/svgs/ChevronRight";
+
+import "./styles/ModalGallery.scss";
 import XSquare from "../../images/svgs/XSquare";
 
 interface IModalProps {
@@ -62,36 +62,35 @@ const Modal: React.FC<IModalProps> = ({
           className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-8
         duration-200 rounded-lg z-[200] w-[80%] h-[80%]"
         >
-          <div className="max-w-[920px] h-full mx-auto">
+          <div className="max-w-[668px] max-h-[700px] mx-auto relative">
+            <div className="w-full text-right">
+              <button className="hover:opacity-75" onClick={onClose}>
+                <XSquare/>
+              </button>
+            </div>
             <div className="flex justify-between pb-2">
-              <p className="font-normal text-[16px] leading-6 text-neutral">
+              {/* <p className="font-normal text-[16px] leading-6 text-neutral">
                 {`${activeIndex + 1} / ${images?.length} - #${pinId}`}
-              </p>
-              {images.length > 0 && (
+              </p> */}
+              {/* {images.length > 0 && (
                 <p className="font-normal text-[16px] leading-6 text-neutral">
                   {images[activeIndex].title}
                 </p>
-              )}
+              )} */}
             </div>
-            <div className="relative h-full w-full flex items-center justify-center">
+            <div className="w-full flex items-start justify-start gap-1 flex-wrap">
               {images.length > 0 ? (
                 images.map((item, index) => {
                   return (
-                    <>
+                    <div className="image_square">
                       <img
                         key={index}
                         src={item.url}
                         alt={item.title}
-                        className={
-                          imageBasedClass +
-                          (index === activeIndex
-                            ? imageSlideCurrent
-                            : index > activeIndex
-                            ? imageSlideNext
-                            : imageSlidePrev)
-                        }
+                        width={220}
+                        height={220}
                       />
-                    </>
+                    </div>
                   );
                 })
               ) : (
@@ -101,19 +100,6 @@ const Modal: React.FC<IModalProps> = ({
               )}
             </div>
           </div>
-          <button className="absolute top-[50%] left-2" onClick={onPrev}>
-            <ChevronLeft />
-          </button>
-          <button className="absolute top-[50%] right-2" onClick={onNext}>
-            <ChevronRight />
-          </button>
-          <button
-            className="absolute bottom-[-28px] right-[50%] translate-x-[50%] flex items-center gap-1"
-            onClick={onClose}
-          >
-            <XSquare />{" "}
-            {/* <span className="leading-6 text-base text-grey">close</span> */}
-          </button>
         </div>
       ) : null}
     </>
