@@ -46,8 +46,8 @@ const VietNamMaps: React.FC<VietNamMapsProps> = ({ pinLocations }) => {
 
   return (
     <div className="relative h-full w-full">
-      <div className="uppercase absolute left-[50%] translate-x-[-50%] translate-y-[-50%] top-[50%] z-[0]">
-        <VietnamText />
+      <div className="uppercase absolute left-[50%] w-[90%] translate-x-[-50%] translate-y-[-50%] top-[50%] z-[0]">
+        <VietnamText className="max-w-full mx-auto" />
       </div>
       <div className="z-[1] absolute flex w-full justify-center top-0 bottom-0">
         <div className="relative">
@@ -102,6 +102,7 @@ const VietNamMaps: React.FC<VietNamMapsProps> = ({ pinLocations }) => {
                 <Pin
                   lat={pin.lat}
                   lng={pin.lng}
+                  pinKey={pin.key}
                   key={pin.key}
                   id={pin.key}
                   ratioMap={ratioMap}

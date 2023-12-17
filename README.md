@@ -2,7 +2,7 @@ My handbook as a small corner.
 
 Built with Gatsby
 
-Production: [https://southxzxhandbook.gatsbyjs.io/](https://southxzxhandbook.gatsbyjs.io/)
+Production: [https://southxzx.space](https://southxzx.space)
 
 Development:
 

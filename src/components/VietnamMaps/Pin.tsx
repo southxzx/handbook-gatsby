@@ -5,24 +5,42 @@ import {
   VIETNAM_COORDINATE,
 } from "../../utils/constants";
 import useHover from "../../hooks/useHover";
-import Modal from "./Modal";
+// import Modal from "./Modal";
+import { IImage } from "../../types/image";
+import ModalGallery from "./ModalGallery";
 
 interface IPinProps {
   lng: number;
   lat: number;
-  key: string;
+  pinKey: string;
   ratioMap: number;
   id: string;
-  images: any[];
+  images: IImage[];
 }
 
-const Pin: React.FC<IPinProps> = ({ lng, lat, key, ratioMap, id, images }) => {
+const Pin: React.FC<IPinProps> = ({
+  lng,
+  lat,
+  pinKey,
+  ratioMap,
+  id,
+  images,
+}) => {
   const { ref, isHovered } = useHover();
 
   const top = (VIETNAM_COORDINATE.LAT_N - lat) * ratioMap - MAP_PIN_HEIGHT;
   const left = (lng - VIETNAM_COORDINATE.LNG_W) * ratioMap - MAP_PIN_WIDTH;
 
+  const first4Images = images.slice(0, 4);
+  const restImages = images.slice(4);
+
   const [openPopUp, setOpenPopUp] = React.useState(false);
+
+  const onPinClick = () => {
+    if (first4Images.length) {
+      setOpenPopUp(true);
+    }
+  };
 
   return (
     <>
@@ -35,11 +53,7 @@ const Pin: React.FC<IPinProps> = ({ lng, lat, key, ratioMap, id, images }) => {
           lineHeight: "22px",
         }}
       >
-        <span
-          className="cursor-pointer"
-          ref={ref}
-          onClick={() => setOpenPopUp(true)}
-        >
+        <span className="cursor-pointer" ref={ref} onClick={onPinClick}>
           📷
         </span>
         {isHovered && (
@@ -50,21 +64,32 @@ const Pin: React.FC<IPinProps> = ({ lng, lat, key, ratioMap, id, images }) => {
               left: 24,
             }}
           >
-            <p className="text-grey text-sm font-bold">📸 #{id}</p>
-            <div className="pt-3">
-              <img
-                src="https://c0.wallpaperflare.com/preview/280/30/526/seoul-korea-mac-wallpaper-pc-wallpaper.jpg"
-                alt="ffff"
-                width={100}
-                height={177.8}
-                className="aspect-video rounded-md"
-              />
-              <p className="text-grey text-sm font-bold text-right">+3 more</p>
+            <p className="text-grey text-sm font-bold">#{id}</p>
+            <div className="pt-3 flex flex-wrap max-w-[136px] gap-1">
+              {first4Images.length > 0 ? (
+                first4Images.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img.url}
+                    alt={img.title}
+                    width={60}
+                    height={60}
+                    className="rounded-md object-cover w-[60px] h-[60px]"
+                  />
+                ))
+              ) : (
+                <p className="text-grey text-sm">No images 😭</p>
+              )}
+              {restImages.length > 0 && (
+                <p className="text-grey text-sm font-bold text-right">
+                  +{restImages.length} more
+                </p>
+              )}
             </div>
           </div>
         )}
       </div>
-      <Modal
+      <ModalGallery
         open={openPopUp}
         onClose={() => setOpenPopUp(false)}
         pinId={id}
