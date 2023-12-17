@@ -62,14 +62,14 @@ There are 4 types of objects:
 
 Let's look at the sketch about git stages:
 
-!["Git stage"]("https://raw.githubusercontent.com/southxzx/handbook-gatsby/main/_posts/everyday/_meta/git-stages.png")
+![Git stage](https://raw.githubusercontent.com/southxzx/handbook-gatsby/main/_posts/everyday/_meta/git-stages.png)
 
 - `git add`: This command stages changes for the next commit. Copy it to **Staging**
 - `git commit`: Commit them to repository, this commit object contains a snapshot of your staged changes, author, message, committer.
 
 >What `git commit` does is creating a moment in time, that said that person creating a snapshot with this message. And that snapshot is represented by tree
 
-!["Git commit process]("https://raw.githubusercontent.com/southxzx/handbook-gatsby/main/_posts/everyday/_meta/objects-example.png")
+![Git commit process](https://raw.githubusercontent.com/southxzx/handbook-gatsby/main/_posts/everyday/_meta/objects-example.png)
 
 - `git reset`: Opposite with git add. It throws everything that is not committed and go back to the latest version that we're working on.
 
@@ -87,7 +87,7 @@ What's inside a branch is just a hash (a commit hash) that is mutable.
 
 `git commit`: When we perform this command, git also points that commit to its parent (the commit before)
 
-!["Git commit refs]("https://raw.githubusercontent.com/southxzx/handbook-gatsby/main/_posts/everyday/_meta/advance-testing.png")
+![Git commit refs](https://raw.githubusercontent.com/southxzx/handbook-gatsby/main/_posts/everyday/_meta/advance-testing.png)
 
 `git checkout`: Specify a commit (a snapshot of our project when update the working directory to reflect that project). 
 
