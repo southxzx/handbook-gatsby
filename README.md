@@ -20,7 +20,7 @@ Then visit [http://localhost:8000/]
 
 | Date       | Title                                                    |
 |------------|----------------------------------------------------------|
-| 2024/02/24 | [Working with Timer in Jest](/_posts/everyday/2023-06-04-stop-propagation-prevent-default.md) |
+| 2024/02/24 | [Working with Timer in Jest](_posts/everyday/2024-02-24-working-with-timer-in-jest.md) |
 | 2024/02/21 | [Git rebase](/_posts/everyday/2024-02-21-git-rebase.md) |
 | 2023/12/17 | [Github internals (part 1)](/_posts/everyday/2023-12-17-github-internals-part-1.md) |
 | 2023/12/13 | [What does SHA1 and SHA256 do?](/_posts/everyday/2023-12-13-what-does-sha1-and-sha256-do.md) |
