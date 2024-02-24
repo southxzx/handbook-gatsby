@@ -18,4 +18,5 @@ Then visit [http://localhost:8000/]
 
 ## Posts:
 
-(Event bubbling in JavaScript and React)[/_posts/everyday/2023-06-04-stop-propagation-prevent-default.md]
+[Event bubbling in JavaScript and React](/_posts/everyday/2023-06-04-stop-propagation-prevent-default.md)
+
