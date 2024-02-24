@@ -13,7 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
   },
   "dependencies": {
     "@fontsource/sarabun": "^5.0.5",
@@ -40,9 +41,15 @@
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/jest": "^29.5.12",
     "@types/node": "^20.3.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "babel-jest": "^29.7.0",
+    "babel-preset-gatsby": "^3.13.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
     "typescript": "^5.1.3"
   }
 }
