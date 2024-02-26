@@ -94,6 +94,7 @@ const Pin: React.FC<IPinProps> = ({
         onClose={() => setOpenPopUp(false)}
         pinId={id}
         images={images}
+        pinKey={pinKey}
       />
     </>
   );

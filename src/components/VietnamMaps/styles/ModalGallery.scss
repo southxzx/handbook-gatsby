@@ -8,8 +8,8 @@
   }
   &:hover {
     @apply cursor-pointer;
-    &::after {
-      @apply opacity-50 duration-0;
-    }
+    // &::after {
+    //   @apply opacity-75 duration-0;
+    // }
   }
 }
