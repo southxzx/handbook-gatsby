@@ -20,7 +20,7 @@ Then visit [http://localhost:8000/]
 
 | Date       | Title                                                    |
 |------------|----------------------------------------------------------|
-| 2024/03/02 | [Hardcoded Dependency vs Dependency Injection in Nodejs](_posts/everyday/2024-03-02-hardcoded-dependency-vs-dependency-injection-in-nodejs) |
+| 2024/03/02 | [Hardcoded Dependency vs Dependency Injection in Nodejs](_posts/everyday/2024-03-02-hardcoded-dependency-vs-dependency-injection-in-nodejs.md) |
 | 2024/02/24 | [Working with Timer in Jest](_posts/everyday/2024-02-24-working-with-timer-in-jest.md) |
 | 2024/02/21 | [Git rebase](/_posts/everyday/2024-02-21-git-rebase.md) |
 | 2023/12/17 | [Github internals (part 1)](/_posts/everyday/2023-12-17-github-internals-part-1.md) |
