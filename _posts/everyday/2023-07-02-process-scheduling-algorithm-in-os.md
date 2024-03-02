@@ -9,7 +9,7 @@ slug: 2023-07-02-process-scheduling-algorithm-in-os
 
 `Process scheduling` enables efficient and fair allocation of CPU to multiple processes, and ensures that the system can run multiple tasks concurrently without sacrificing performance or responsiveness.
 
-Scheduling metrics: *`Tturnaround = Tcompletion − Tarrival`*
+Scheduling metrics: _`Tturnaround = Tcompletion − Tarrival`_
 
 ## First-Come, First-Serve (FCFS)
 
@@ -29,7 +29,7 @@ This does nothing but add `preemption` to SJF. A job is preempted means that it'
 
 ## Round Robin
 
-Assume that each process now has response time, then we have new metric: *`Tresponse = Tfirstrun − Tarrival`*
+Assume that each process now has response time, then we have new metric: _`Tresponse = Tfirstrun − Tarrival`_
 
 Instead of running jobs to completion, RR runs a job for a `time slice` (scheduling quantum).
 
@@ -48,4 +48,4 @@ Both are bad where the other is good, it's a trade-off common in systems.
 
 **Refs:**
 
-Book: Operating Systems: Three Easy Pieces - Remzi H. Arpaci-Dusseau
+[Book] Operating Systems: Three Easy Pieces - _Remzi H. Arpaci-Dusseau_
