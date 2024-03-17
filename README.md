@@ -20,6 +20,7 @@ Then visit [http://localhost:8000/]
 
 | Date       | Title                                                    |
 |------------|----------------------------------------------------------|
+| 2024/03/17 | [P2P & Message brokers in Nodejs messaging](_posts/everyday/2024-03-17-p2p-message-brokers-in-nodejs-messaging.md) |
 | 2024/03/16 | [The scale cube in Nodejs](_posts/everyday/2024-03-16-the-scale-cube-in-nodejs.md) |
 | 2024/03/02 | [Hardcoded Dependency vs Dependency Injection in Nodejs](_posts/everyday/2024-03-02-hardcoded-dependency-vs-dependency-injection-in-nodejs.md) |
 | 2024/02/24 | [Working with Timer in Jest](_posts/everyday/2024-02-24-working-with-timer-in-jest.md) |
