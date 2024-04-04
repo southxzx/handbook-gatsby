@@ -158,7 +158,7 @@ var combinationSum = function(candidates, target) {
 Input: `board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"`
 Output: `true`
 
-![Word Search problem](https://raw.githubusercontent.com/southxzx/handbook-gatsby/main/_posts/everyday/_meta/work-search.jpeg)
+![Word Search problem](https://raw.githubusercontent.com/southxzx/handbook-gatsby/main/_posts/everyday/_meta/word-search.jpeg)
 
 ```js
 var exist = function (board, word) {
