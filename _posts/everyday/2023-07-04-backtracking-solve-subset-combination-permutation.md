@@ -153,6 +153,52 @@ var combinationSum = function(candidates, target) {
 };
 ```
 
+## 6. Word Search (Leetcode 79)
+
+Input: `board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"`
+Output: `true`
+
+![Word Search problem](https://raw.githubusercontent.com/southxzx/handbook-gatsby/main/_posts/everyday/_meta/work-search.jpeg)
+
+```js
+var exist = function (board, word) {
+    const rows = board.length;
+    const cols = board[0].length;
+
+    var backtrack = function (index, x, y) {
+        // meet the target
+        if (index === word.length) {
+            return true;
+        }
+
+        if (x >= cols || x < 0 || y >= rows || y < 0 || board[y][x] !== word[index]) return false;
+
+        const temp = board[y][x];
+        board[y][x] = "#";
+
+        const found = backtrack(index + 1, x + 1, y)
+        || backtrack(index + 1, x, y - 1)
+        || backtrack(index + 1, x, y + 1)
+        || backtrack(index + 1, x - 1, y);
+
+        // restore;
+        board[y][x] = temp;
+
+        return found;
+    }
+
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            if (board[i][j] === word[0] && backtrack(0, j, i)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+};
+```
+
 **Refs:**
 
 [https://labuladong.gitbook.io/algo-en/iii.-algorithmic-thinking/subset_permutation_combination](https://labuladong.gitbook.io/algo-en/iii.-algorithmic-thinking/subset_permutation_combination)
