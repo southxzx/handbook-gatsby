@@ -20,6 +20,7 @@ Then visit [http://localhost:8000/]
 
 | Date       | Title                                                    |
 |------------|----------------------------------------------------------|
+| 2024/04/14 | [(Leetcode) Maximum Rectangle Area](/_posts/everyday/2024-04-14-leetcode-maximum-rectangle-area.md) |
 | 2024/04/03 | [Singleton with JS](/_posts/everyday/2024-04-03-singleton-with-js.md) |
 | 2024/03/29 | [Session vs Token Based Authentication](/_posts/everyday/2024-03-29-session-vs-token-based-authentication.md) |
 | 2024/03/17 | [P2P & Message brokers in Nodejs messaging](_posts/everyday/2024-03-17-p2p-message-brokers-in-nodejs-messaging.md) |
