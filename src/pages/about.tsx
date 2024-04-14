@@ -72,7 +72,7 @@ const AboutPage: React.FC = () => {
             rel="noreferrer"
             className="text-grey font-light"
           >
-            goodreads.com/southxzx
+            https://goodreads.com/southxzx
           </a>
         </span>
       </div>
