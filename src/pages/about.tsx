@@ -67,7 +67,7 @@ const AboutPage: React.FC = () => {
         <span>
           - 📚 Goodreads:&nbsp;
           <a
-            href="goodreads.com/southxzx"
+            href="https://goodreads.com/southxzx"
             target="_blank"
             rel="noreferrer"
             className="text-grey font-light"
