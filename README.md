@@ -20,7 +20,7 @@ Then visit [http://localhost:8000/]
 
 | Date       | Title                                                    |
 |------------|----------------------------------------------------------|
-| 2024/04/21 | [Key notes: HTTP The Definitive Guide](/_posts/everyday/2024-05-07-key-notes-http-the-definitive-guide) |
+| 2024/05/07 | [Key notes: HTTP The Definitive Guide](/_posts/everyday/2024-05-07-key-notes-http-the-definitive-guide) |
 | 2024/04/21 | [Graph traversal: DFS & BFS](/_posts/everyday/2024-04-21-graph-traversal-dfs-bfs.md) |
 | 2024/04/14 | [(Leetcode) Maximum Rectangle Area](/_posts/everyday/2024-04-14-leetcode-maximum-rectangle-area.md) |
 | 2024/04/03 | [Singleton with JS](/_posts/everyday/2024-04-03-singleton-with-js.md) |
