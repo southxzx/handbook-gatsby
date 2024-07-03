@@ -20,6 +20,7 @@ Then visit [http://localhost:8000/]
 
 | Date       | Title                                                    |
 |------------|----------------------------------------------------------|
+| 2024/07/03 | [Understand the 'static' keyword in Java](/_posts/everyday/2024-07-03-understand-the-static-keyword-in-java.md) |
 | 2024/06/25 | [TCP and UDP](/_posts/everyday/2024-06-25-tcp-and-udp.md) |
 | 2024/05/07 | [Key notes: HTTP The Definitive Guide](/_posts/everyday/2024-05-07-key-notes-http-the-definitive-guide.md) |
 | 2024/04/21 | [Graph traversal: DFS & BFS](/_posts/everyday/2024-04-21-graph-traversal-dfs-bfs.md) |
