@@ -34,7 +34,7 @@ UDP works by immediately firing data and doesn't care about the delivery part. S
 
 - Ex: Online gaming, Video chat, DNS,...
 
-## 3. Different
+## 3. Difference
 
 A picture can say it all.
 
