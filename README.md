@@ -20,6 +20,7 @@ Then visit [http://localhost:8000/]
 
 | Date       | Title                                                    |
 |------------|----------------------------------------------------------|
+| 2024/07/17 | [Heap Data Structure](/_posts/everyday/2024-07-19-heap-data-structure.md) |
 | 2024/07/17 | [Processes and threads in Android](/_posts/everyday/2024-07-17-processes-and-threads-in-android.md) |
 | 2024/07/03 | [Understand the 'static' keyword in Java](/_posts/everyday/2024-07-03-understand-the-static-keyword-in-java.md) |
 | 2024/06/25 | [TCP and UDP](/_posts/everyday/2024-06-25-tcp-and-udp.md) |
