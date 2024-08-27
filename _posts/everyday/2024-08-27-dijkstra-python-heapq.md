@@ -2,7 +2,7 @@
 title: "Dijkstra + Python's heapq"
 tags: ["python", "algorithm"]
 date: 2024/08/27
-slug: 2024-08/27-dijkstra-python-heapq
+slug: 2024-08-27-dijkstra-python-heapq
 ---
 ## 1. Heap
 
