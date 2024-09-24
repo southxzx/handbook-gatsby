@@ -20,6 +20,7 @@ Then visit [http://localhost:8000/]
 
 | Date       | Title                                                    |
 |------------|----------------------------------------------------------|
+| 2024/09/24 | [Trie Data Structure](/_posts/everyday/2024-09-24-trie-data-structure.md) |
 | 2024/08/27 | [Dijkstra + Python's heapq](/_posts/everyday/2024-08-27-dijkstra-python-heapq.md) |
 | 2024/07/28 | [Writing Shell Scripts](/_posts/everyday/2024-07-28-writing-shell-scripts.md) |
 | 2024/07/26 | [Floyd Warshall Algorithm](/_posts/everyday/2024-07-26-floyd-warshall-algorithm.md) |
